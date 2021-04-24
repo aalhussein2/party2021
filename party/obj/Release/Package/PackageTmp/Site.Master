@@ -1,0 +1,194 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="party.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+            <link href="/Styles/Site.css" rel="stylesheet" type="text/css" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+<%--    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script type="text/javascript" src="../Scripts/tiny_mce/tiny_mce.js"></script>
+    <script type="text/javascript" lang="javascript">
+        tinyMCE.init({
+            // General options
+
+            mode: "textareas",
+            theme: "advanced",
+            plugins: "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups",
+        });
+    </script>--%>
+    
+    </head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+<%--        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="Home">Demo</a>
+                             <ul class="nav navbar-nav">
+                                     <li><a runat="server" href="~/demo/clientSide.aspx">Client Side</a></li>
+                                     <li><a runat="server" href="~/demo/clientUploadDoc.aspx">Client Upload Doc </a></li>
+                             </ul>
+                        </li>
+                        <li><a runat="server" href="~/demo/clientUploadDoc.aspx">Client Upload Doc</a></li>
+                       <li><a runat="server" href="~/demo/customer.aspx">Customer</a></li>
+                        <li><a runat="server" href="~/demo/employeeCrud.aspx">employee Crud</a></li>
+                        <li><a runat="server" href="~/demo/employeeInputform.aspx">Employee Form</a></li>
+                        <li><a runat="server" href="~/demo/employeeobject.aspx">Employee</a></li>
+                        <li><a runat="server" href="~/demo/HtmlPage1.html">HTML page1</a></li>
+                        <li><a runat="server" href="~/demo/myAjaxFileUpload.aspx">HTML page1</a></li>
+                        <li><a runat="server" href="~/demo/myCheckBoxList.aspx"> CheckBoxList </a></li>
+                        <li><a runat="server" href="~/demo/sendEmail.aspx">Send Email </a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>--%>
+        <div class="header">
+           
+            <div class="title">
+                 <h1>
+                   <span style="color:#3a4f63;"> King Fahad Medical City Projects</span> 
+
+                </h1>
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo55.PNG" 
+                        ImageAlign="Right" Width="300" Height="50"/> 
+            </div>
+    
+            <div class="loginDisplay">
+            <br /> <br />
+                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        
+                        [ <a href="~/Account/login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" 
+                            LogoutPageUrl="~/default.aspx"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+ <div class="clear hideSkiplink">
+        <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+            IncludeStyleBlock="false" Orientation="Horizontal"
+            OnMenuItemClick="NavigationMenu_MenuItemClick">
+            <Items>
+                <asp:MenuItem Text="About Us">
+                    <asp:MenuItem NavigateUrl="~/About.aspx" Text="About Us" Value="" />
+
+                </asp:MenuItem>
+
+                <asp:MenuItem Text="Hospital and Centers">
+                    <asp:MenuItem NavigateUrl="~/HospitalandCenters/MianHospital.aspx" Text="Main Hospital" Value="" />
+                    <asp:MenuItem NavigateUrl="~/HospitalandCenters/ChildrensHospital.aspx" Text="Childrens Hospital" Value="" />
+                </asp:MenuItem>
+
+                <asp:MenuItem Text="Interns">
+                    <asp:MenuItem NavigateUrl="~/Interns/InternsProfile.aspx" Text="InternsProfile" Value="" />
+                    <asp:MenuItem NavigateUrl="~/Interns/internsAttendance.aspx" Text="Intern Attendance" Value="" />
+                    <asp:MenuItem NavigateUrl="~/Interns/repeater.aspx" Text="repeater " Value="" />
+                </asp:MenuItem>
+
+                <asp:MenuItem Text="Supervisor">
+                    <asp:MenuItem NavigateUrl="~/Supervisor/SupervisorProfile.aspx" Text="Supervisor Profile" Value="" />
+                    <asp:MenuItem NavigateUrl="~/Supervisor/SupervisorInternsList.aspx" Text="Supervisor Interns List" Value="" />
+                </asp:MenuItem>
+
+                <asp:MenuItem Text="Admin">
+                    <asp:MenuItem NavigateUrl="~/admin/showRoles.aspx" Text="showRoles" Value="" />
+                    <asp:MenuItem NavigateUrl="~/account/ChangePassword.aspx" Text="ChangePassword" Value="" />
+                </asp:MenuItem>
+
+                <asp:MenuItem Text="Finance">
+                    <asp:MenuItem NavigateUrl="~/finance/default.aspx" Text="Finance" Value="" />
+                </asp:MenuItem>
+                <asp:MenuItem Text="Marketing">
+                    <asp:MenuItem NavigateUrl="~/marketing/default.aspx" Text="Marketing" Value="" />
+                </asp:MenuItem>
+
+                <asp:MenuItem Text="Demo">
+                    
+                     <asp:MenuItem NavigateUrl="~/demo/customer.aspx" Text="customer gv " Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/clientSide.aspx" Text="Client Side " Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/ClientUploadDoc.aspx" Text="Client Upload Doc " Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/employeeCrud.aspx" Text="Employee Crud" Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/employeeInputForm.aspx" Text="Employee Input form" Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/employeeObject.aspx" Text="Employee Object   " Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/gvEditInform.aspx" Text="Gv Edit in Form"  Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/HtmlPage1.html" Text="HTML " Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/jsCaptureFormInput.aspx" Text="Js Capture Form Input   " Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/employeeCrud.aspx" Text="Employee CRUD   " Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/linkInGvRow.aspx" Text="Link In Gv Row   " Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/myAjaxFileUpload.aspx" Text=" Ajax File Upload   " Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/myCheckBoxList.aspx" Text=" CheckBox List" Value="" />
+                    <asp:MenuItem NavigateUrl="~/demo/sendEmail.aspx" Text=" send Email   " Value="" />
+                </asp:MenuItem>
+
+                
+                <asp:MenuItem Text="Deployment Demo">
+                    <asp:MenuItem NavigateUrl="~/deployement.aspx" Text="Demo Deployment " Value="" />
+                </asp:MenuItem>
+
+                <asp:MenuItem NavigateUrl="~/contactUs.aspx" Text="Contact Us" />
+            </Items>
+        </asp:Menu>
+<%--        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+        </div>--%>
+                 </div>
+        </div>
+         <div class="rigthSide">
+        hi
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+        <script  type="text/javascript" src="/Scripts/clientSide.js"></script>
+    
+</body>
+</html>

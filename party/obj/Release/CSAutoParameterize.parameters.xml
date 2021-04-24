@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="partyConnectionStringxxx-Web.config Connection String" description="partyConnectionStringxxx Connection String used in web.config by the application to access the database." defaultValue="Data Source=T450S\SQLEXP2017;Initial Catalog=party;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\projects\\party_Oct152020\\party\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='partyConnectionStringxxx']/@connectionString" />
+  </parameter>
+  <parameter name="partyConnectionStringxxxxx-Web.config Connection String" description="partyConnectionStringxxxxx Connection String used in web.config by the application to access the database." defaultValue="Data Source=XXXXXX;Initial Catalog=XXXXXX; User Id=XXXXX  ;Password=xxxxx;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\projects\\party_Oct152020\\party\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='partyConnectionStringxxxxx']/@connectionString" />
+  </parameter>
+  <parameter name="ArmyConStr-Web.config Connection String" description="ArmyConStr Connection String used in web.config by the application to access the database." defaultValue="Data Source=T450S\SQLEXP2017;Initial Catalog=Army;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\projects\\party_Oct152020\\party\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ArmyConStr']/@connectionString" />
+  </parameter>
+  <parameter name="partyConnectionString-Web.config Connection String" description="partyConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=sql5059.site4now.net;Initial Catalog=DB_9E45A0_contact2; User Id=DB_9E45A0_contact2_admin ;Password=Kfmc123456;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\projects\\party_Oct152020\\party\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='partyConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="aalhussein-002-site22" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\projects\\party_Dec062019\\party\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\projects\\party_Dec062019\\party\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="partyConnectionStringxxx1-Web.config Connection String" description="partyConnectionStringxxx1 Connection String used in web.config by the application to access the database." value="Data Source=T450S\SQLEXP2017;Initial Catalog=party;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\projects\\party_Dec062019\\party\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='partyConnectionStringxxx1']/@connectionString" />
+  </parameter>
+  <parameter name="partyConnectionStringxxx2-Web.config Connection String" description="partyConnectionStringxxx2 Connection String used in web.config by the application to access the database." value="Data Source=T450S\SQLEXP2017;Initial Catalog=party; User Id=ali  ;Password=ali;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\projects\\party_Dec062019\\party\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='partyConnectionStringxxx2']/@connectionString" />
+  </parameter>
+  <parameter name="partyConnectionString-Web.config Connection String" description="partyConnectionString Connection String used in web.config by the application to access the database." value="Data Source=sql5014.site4now.net;Initial Catalog=DB_9E45A0_party; User Id=DB_9E45A0_party_admin  ;Password=xxxxx;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\projects\\party_Dec062019\\party\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='partyConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
